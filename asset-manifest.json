@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/HundredQuestionGame/static/js/main.079acb8b.js",
+    "static/js/748.c56b17f7.js": "/HundredQuestionGame/static/js/748.c56b17f7.js",
+    "favicon.ico": "/HundredQuestionGame/favicon.ico",
+    "index.html": "/HundredQuestionGame/index.html",
+    "favicon-32.png": "/HundredQuestionGame/favicon-32.png",
+    "favicon-16.png": "/HundredQuestionGame/favicon-16.png",
+    "manifest.json": "/HundredQuestionGame/manifest.json",
+    "serve.json": "/HundredQuestionGame/serve.json",
+    "main.079acb8b.js.map": "/HundredQuestionGame/static/js/main.079acb8b.js.map",
+    "748.c56b17f7.js.map": "/HundredQuestionGame/static/js/748.c56b17f7.js.map"
+  },
+  "entrypoints": [
+    "static/js/748.c56b17f7.js",
+    "static/js/main.079acb8b.js"
+  ]
+}
