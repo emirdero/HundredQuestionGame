@@ -1,25 +1,25 @@
-// src/screens/SelectionScreen.js
 import React from 'react';
 import { View, Text, Button, StyleSheet, ScrollView } from 'react-native';
-import { questionSets } from '../data/questions';
 
-export default function SelectionScreen({ navigation }) {
-  const handleSelectSet = (set) => {
-    navigation.navigate('Theme', { selectedSet: set });
+export default function ThemeScreen({ route, navigation }) {
+  const { selectedSet } = route.params;
+
+  const handleSelectTheme = (theme) => {
+    navigation.navigate('Game', { selectedSet, selectedTheme: theme });
   };
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Velg Spørsmålsett</Text>
-      {questionSets.map((set) => (
-        <View key={set.id} style={styles.buttonContainer}>
+      <Text style={styles.title}>Velg Tema</Text>
+      {selectedSet.themes.map((theme, idx) => (
+        <View key={theme.name} style={styles.buttonContainer}>
           <Button
-            title={set.name}
-            onPress={() => handleSelectSet(set)}
+            title={theme.name}
+            onPress={() => handleSelectTheme(theme)}
+            color="#1e90ff"
           />
         </View>
       ))}
-      {/* Add more buttons if you have more sets */}
     </ScrollView>
   );
 }
@@ -30,14 +30,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#000000',
+    backgroundColor: '#000',
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 30,
     textAlign: 'center',
-    color: '#FFFFFF',
+    color: '#fff',
   },
   buttonContainer: {
     marginVertical: 10,

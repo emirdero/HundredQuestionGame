@@ -23,9 +23,17 @@ const CardType = {
 };
 
 export default function GameScreen({ route, navigation }) {
-    const { selectedSet } = route.params;
+    const { selectedSet, selectedTheme } = route.params;
 
-    const [themeIndex, setThemeIndex] = useState(0);
+    // If selectedTheme is provided, use it directly; otherwise, use themeIndex
+    const [themeIndex, setThemeIndex] = useState(() => {
+        if (selectedTheme) {
+            // Find the index of the selected theme in the set
+            const idx = selectedSet.themes.findIndex(t => t.name === selectedTheme.name);
+            return idx !== -1 ? idx : 0;
+        }
+        return 0;
+    });
     // -1 for theme intro, 0-9 for questions, 10 for drink prompt
     const [questionIndex, setQuestionIndex] = useState(-1);
     const [currentText, setCurrentText] = useState('');

@@ -7,6 +7,7 @@ import StartScreen from '../screens/StartScreen';
 import SelectionScreen from '../screens/SelectionScreen';
 import GameScreen from '../screens/GameScreen';
 import InfoScreen from '../screens/InfoScreen';
+import ThemeScreen from '../screens/ThemeScreen';
 
 const Stack = createStackNavigator();
 
@@ -49,6 +50,11 @@ export default function AppNavigator() {
                     name="Info"
                     component={InfoScreen}
                     options={{ title: 'Informasjon' }}
+                />
+                <Stack.Screen
+                    name="Theme"
+                    component={ThemeScreen}
+                    options={{ title: 'Velg Tema' }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
